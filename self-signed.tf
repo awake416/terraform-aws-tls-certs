@@ -1,3 +1,8 @@
+terraform {
+  experiments      = [
+    module_variable_optional_attrs]
+}
+
 locals {
   algorithm           = var.algorithm == "RSA" ? var.algorithm : "ECDSA"
   self_signed         = var.exec_mode == "self_signed" ? 1 : 0
@@ -7,7 +12,7 @@ locals {
   allowed_uses_client = concat(var.allowed_uses_common, [
     "client_auth"])
 
-  subject = merge(var.subject, {
+  subject = defaults(var.subject, {
     country             = ""
     locality            = ""
     organizational_unit = ""
