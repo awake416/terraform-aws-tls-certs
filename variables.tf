@@ -38,7 +38,7 @@ variable "subject" {
     locality            = optional(string)
     organizational_unit = optional(string)
     postal_code         = optional(string)
-    province            = string
+    province            = optional(string)
   })
   default = {
     common_name = "cn"
