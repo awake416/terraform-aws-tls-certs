@@ -1,8 +1,3 @@
-terraform {
-  experiments = [
-    module_variable_optional_attrs]
-}
-
 locals {
   algorithm           = var.algorithm == "RSA" ? var.algorithm : "ECDSA"
   self_signed         = var.exec_mode == "self_signed" ? 1 : 0
