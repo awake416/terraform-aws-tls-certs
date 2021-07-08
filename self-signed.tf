@@ -7,7 +7,7 @@ locals {
   allowed_uses_client = concat(var.allowed_uses_common, [
     "client_auth"])
 
-  subject = defaults(var.subject, {
+  subject = merge(var.subject, {
     country             = ""
     locality            = ""
     organizational_unit = ""

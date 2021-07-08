@@ -34,15 +34,20 @@ variable "subject" {
   type = object({
     common_name         = string
     organization        = string
-    country             = optional(string)
-    locality            = optional(string)
-    organizational_unit = optional(string)
-    postal_code         = optional(string)
-    province            = optional(string)
+    country             = string
+    locality            = string
+    organizational_unit = string
+    postal_code         = string
+    province            = string
   })
   default = {
     common_name = "cn"
     organization = "acme"
+    country             = ""
+    locality            = ""
+    organizational_unit = ""
+    postal_code         = ""
+    province            = ""
   }
 }
 
