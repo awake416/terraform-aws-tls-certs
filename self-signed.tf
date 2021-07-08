@@ -64,7 +64,7 @@ resource tls_cert_request server_request {
   key_algorithm   = local.algorithm
   private_key_pem = tls_private_key.server.private_key_pem
   subject {
-    common_name         = "${local.subject.common_name}.server}"
+    common_name         = "${local.subject.common_name}.server"
     country             = local.subject.country
     locality            = local.subject.locality
     organization        = local.subject.organization
@@ -72,7 +72,7 @@ resource tls_cert_request server_request {
     postal_code         = local.subject.postal_code
     province            = local.subject.province
   }
-  dns_names = ["${local.subject.common_name}.server}"]
+  dns_names = ["${local.subject.common_name}.server"]
 }
 
 resource tls_locally_signed_cert server_signed {
@@ -100,7 +100,7 @@ resource tls_cert_request client_request {
   key_algorithm   = local.algorithm
   private_key_pem = tls_private_key.client.private_key_pem
   subject {
-    common_name         = "${local.subject.common_name}.client}"
+    common_name         = "${local.subject.common_name}.client"
     country             = local.subject.country
     locality            = local.subject.locality
     organization        = local.subject.organization
@@ -108,7 +108,7 @@ resource tls_cert_request client_request {
     postal_code         = local.subject.postal_code
     province            = local.subject.province
   }
-  dns_names = ["${local.subject.common_name}.client}"]
+  dns_names = ["${local.subject.common_name}.client"]
 }
 
 resource tls_locally_signed_cert client_signed {
