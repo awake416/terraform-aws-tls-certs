@@ -3,9 +3,9 @@ output ca_cert_arn {
 }
 
 output server_cert_arn {
-  value = join("", aws_acm_certificate.server.arn)
+  value = aws_acm_certificate.server.arn
 }
 
 output client_cert_arn {
-  value = join("", aws_acm_certificate.client.arn)
+  value = aws_acm_certificate.client.arn
 }
